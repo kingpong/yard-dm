@@ -12,9 +12,9 @@ describe "PropertyHandler" do
       parse_file :simple_properties
     end
 
-    it "should define class methods for the properties" do
-      yard('SimpleProperties.id').should be_instance_of(CodeObjects::MethodObject)
-      yard('SimpleProperties.name').should be_instance_of(CodeObjects::MethodObject)
+    it "should not define class methods for the properties" do
+      yard('SimpleProperties.id').should be_nil
+      yard('SimpleProperties.name').should be_nil
     end
 
     it "should define reader methods for the properties" do
